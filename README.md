@@ -24,3 +24,6 @@
     ( ) Não é permitido cadastrar elogios para usuário não existente.
 
     ( ) É necessário o usuário ser autenticado na aplicação.
+
+
+    server -> controller -> service -> ...
