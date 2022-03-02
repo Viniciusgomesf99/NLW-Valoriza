@@ -26,4 +26,28 @@
     ( ) É necessário o usuário ser autenticado na aplicação.
 
 
-    server -> controller -> service -> ...
+
+
+    ## Migrations
+        Migration é um arquivo com as queries SQL para atualizar o esboço do nosso BD¹ e aplicar novas mudanças a um BD existente.
+
+        Para utilizar definimos o diretório no nosso ormconfig.json, exemplo:
+        "migrations": ["src/database/migrations/*.ts"]
+    ## Entities
+        Entity é uma classe que tem como funcionalidade mapear as tabelas do nosso BD.Podemos criar uma entidade definindo uma nova classe e colocando @entity() antes.
+        Para utilizarmos no nosso projeto devemos definir:"entities": ["src/entities/*.ts"]
+        em nosso ormconfig.js
+    ## Repositories
+        Repository é como um manipulador de entidade, mas suas operações são limitadas a uma entidade concreta. Podemos utilizar um repositório de algum ORM ou criarmos o nosso repositório customizado, do qual geralmente é criado para uma unica entity e contem querys específicas.
+
+    ## Service
+        Tudo relacionado à criação de usuário, no nosso caso teremos as seguintes services:
+
+        Cadastro de usuários,
+        Cadastro de Tags,
+        Listagem.
+
+    ## Controller
+        Responsável por repassar informações para o service após receber as informações do server.
+
+    ###### 1) DB - Data Base = Banco de dados
